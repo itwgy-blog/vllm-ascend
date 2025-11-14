@@ -73,7 +73,7 @@ jobs:
       with:
         # TODO(yikun): add more hub image and a note on release policy for container image
         images: |
-          quay.io/ascend/vllm-ascend
+          ghcr.io/ascend/vllm-ascend
         # Note for test case
         # https://github.com/marketplace/actions/docker-metadata-action#typeref
         # 1. branch job pulish per main/*-dev branch commits
