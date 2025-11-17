@@ -46,7 +46,7 @@ on:
 
 # only cancel in-progress runs of the same workflow
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: ${{github.workflow}}-${{github.ref}}
   cancel-in-progress: true
 
 jobs:
@@ -73,7 +73,7 @@ jobs:
       with:
         # TODO(yikun): add more hub image and a note on release policy for container image
         images: |
-          ghcr.io/ascend/vllm-ascend
+          ghcr.io/itwgy-blog/vllm-ascend
         # Note for test case
         # https://github.com/marketplace/actions/docker-metadata-action#typeref
         # 1. branch job pulish per main/*-dev branch commits
@@ -107,8 +107,8 @@ jobs:
       uses: docker/login-action@v3
       with:
         registry: ghcr.io
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
+        username: ${{github.actor}}
+        password: ${{secrets.GITHUB_TOKEN}}
 
     - name: Build and push 310p
       uses: docker/build-push-action@v6
